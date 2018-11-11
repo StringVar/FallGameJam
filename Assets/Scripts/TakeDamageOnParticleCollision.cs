@@ -6,7 +6,6 @@ namespace Damage_System
     {
         private void OnParticleCollision(GameObject other)
         {
-            Debug.Log("Oww");
             TakeDamage();
         }
     }

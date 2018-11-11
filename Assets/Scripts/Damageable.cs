@@ -18,9 +18,13 @@ namespace Damage_System
         public class GivenDamageEvent : UnityEvent<DamageGiver, Damageable>
         {
         }
+        
+        [Serializable]
         public class TakeDamageEvent : UnityEvent<DamageTaker, Damageable>
         {
         }
+        
+        [Serializable]
         public class DamageEvent : UnityEvent<Damageable>
         {
         }
@@ -68,6 +72,7 @@ namespace Damage_System
             if (debugLog)
             {
                 onTakeDamage.AddListener(LogDamageEvent);
+                onGivenDamage.AddListener(LogDamageEvent);
             }
         }
 

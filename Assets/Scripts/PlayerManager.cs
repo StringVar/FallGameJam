@@ -39,6 +39,7 @@ namespace Damage_System
 
             if (enabledPlayers==1 && lastAlive)
             {
+                Application.LoadLevel(Application.loadedLevel);
                 Debug.Log(lastAlive.name+ ""+ "wins !!");
             }
             

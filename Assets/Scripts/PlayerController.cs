@@ -60,7 +60,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(Gamepad.all.Count);
         try
         {
             gamepad = Gamepad.all[controllerNumber];

@@ -18,7 +18,7 @@ namespace Damage_System
                 Damageable health = player.GetComponent<Damageable>();
                 health.maxHealth = maxhealth;
                 playerControllers.Add(player.GetComponent<PlayerController>());
-                    
+                
             }
             
 

@@ -152,40 +152,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 198029922679723854, guid: 97013c4051335c0489018ca66f52fd62,
-        type: 2}
-      propertyPath: InheritVelocityModule.m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198029922679723854, guid: 97013c4051335c0489018ca66f52fd62,
-        type: 2}
-      propertyPath: CollisionModule.m_Bounce.scalar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198029922679723854, guid: 97013c4051335c0489018ca66f52fd62,
-        type: 2}
-      propertyPath: CollisionModule.m_Dampen.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198029922679723854, guid: 97013c4051335c0489018ca66f52fd62,
-        type: 2}
-      propertyPath: CollisionModule.minKillSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198029922679723854, guid: 97013c4051335c0489018ca66f52fd62,
-        type: 2}
-      propertyPath: CollisionModule.maxKillSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198029922679723854, guid: 97013c4051335c0489018ca66f52fd62,
-        type: 2}
-      propertyPath: InheritVelocityModule.m_Curve.scalar
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4916077908850422, guid: 97013c4051335c0489018ca66f52fd62, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97013c4051335c0489018ca66f52fd62, type: 2}
   m_IsPrefabAsset: 0

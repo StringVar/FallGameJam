@@ -6,6 +6,7 @@ using UnityEngine.Experimental.Input;
 using UnityEngine.Serialization;
 
 [RequireComponent(typeof(PlatformerController))]
+[RequireComponent(typeof(AudioSource))]
 public class PlayerController : MonoBehaviour
 {
     private Gamepad gamepad;
@@ -16,7 +17,12 @@ public class PlayerController : MonoBehaviour
     public CirclePositioner gunPositioner;
     public ParticleSystem gun;
 
+    public AudioClip pewSound;
+    
+    private AudioSource audio;
 
+    
+    
     private bool _isShooting;
 
     public bool isShooting
@@ -47,6 +53,9 @@ public class PlayerController : MonoBehaviour
         if (Gamepad.all.Count < controllerNumber)
         {
         }
+
+        audio = GetComponent<AudioSource>();
+        audio.clip = pewSound;
     }
 
     void Update()
@@ -61,6 +70,12 @@ public class PlayerController : MonoBehaviour
             gunPositioner.SetRotation(RightAxis);
             if (!Vector2isZero(RightAxis))
             {
+
+                if (!audio.isPlaying)
+                {
+                    audio.Play();
+                }
+                     
                 isShooting = true;
             }
             else
@@ -92,4 +107,5 @@ public class PlayerController : MonoBehaviour
 
         return true;
     }
+
 }

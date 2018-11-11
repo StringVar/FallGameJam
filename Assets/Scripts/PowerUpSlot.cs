@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PowerUpSlot : MonoBehaviour {
+    public GameObject powerUpTypeContainers;
     private GameObject[] powerUps;
     private int powerUpChoice;
 
     private void Start() {
-        powerUps = new GameObject[transform.childCount];
-        for (int i = 0; i < transform.childCount; i++) {
-            powerUps[i] = transform.GetChild(i).gameObject;
+        powerUps = new GameObject[powerUpTypeContainers.transform.childCount];
+        for (int i = 0; i < powerUpTypeContainers.transform.childCount; i++) {
+            powerUps[i] = powerUpTypeContainers.transform.GetChild(i).gameObject;
         }
     }
 
     public void PlacePowerUp() {
         powerUpChoice = Random.Range(0, powerUps.Length);
-        Instantiate(powerUps[powerUpChoice]);
+        Debug.Log("Spawn Power Up");
     }
 }

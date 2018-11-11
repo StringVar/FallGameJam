@@ -29,7 +29,6 @@ public class Portal : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision) {
         if (objToTeleport.gameObject.name == "Bullet") {
-            Debug.Log("Im leaving the trigger");
             StartCoroutine(WaitToTeleport(teleportTime));
         }
     }

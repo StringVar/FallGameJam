@@ -10,11 +10,12 @@ public class PlayerController : MonoBehaviour
 {
     private Gamepad gamepad;
     public int controllerNumber;
-   
+
     public PlatformerController Controller;
     public GameObject Gun;
     public CirclePositioner gunPositioner;
     public ParticleSystem gun;
+
 
     private bool _isShooting;
 
@@ -40,25 +41,39 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        Controller = GetComponent<PlatformerController>();         
-        gun.Play();
+        Controller = GetComponent<PlatformerController>();
+        gun.Stop();
+
+        if (Gamepad.all.Count < controllerNumber)
+        {
+        }
     }
 
     void Update()
     {
-        gamepad = Gamepad.all[controllerNumber];
-        Controller.Move(gamepad.leftStick.ReadValue());
-        Vector2 RightAxis = gamepad.rightStick.ReadValue();
-        gunPositioner.SetRotation(RightAxis);
-        if (!Vector2isZero(RightAxis))
+        Debug.Log(Gamepad.all.Count);
+        try
         {
-            isShooting = true;
-            Debug.Log("Shoot");
-        }
-        else
-        {
-            isShooting = false;
+            gamepad = Gamepad.all[controllerNumber];
 
+            Controller.Move(gamepad.leftStick.ReadValue());
+            Vector2 RightAxis = gamepad.rightStick.ReadValue();
+            gunPositioner.SetRotation(RightAxis);
+            if (!Vector2isZero(RightAxis))
+            {
+                isShooting = true;
+            }
+            else
+            {
+                isShooting = false;
+            }
+        }
+        catch (Exception e)
+        {
+            gameObject.SetActive(false);
+            Debug.Log("playercontroller: " + gameObject.name + " disabled due to device not pluged in" +
+                      Gamepad.all.Count);
+            return;
         }
     }
 
@@ -77,5 +92,4 @@ public class PlayerController : MonoBehaviour
 
         return true;
     }
-    
 }

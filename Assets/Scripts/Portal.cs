@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour {
     [SerializeField] private float teleportTime = 0.1f;
+    [SerializeField] private AudioClip teleportEntry;
 
     public GameObject entryPortal;
     public GameObject exitPortal;
     public Bullet bulletScript;
 
     private Transform objToTeleport;
+    private AudioSource audioSource;
+
+    private void Start() {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Teleport() {
         if (objToTeleport.gameObject.name == "Bullet") {
             bulletScript.canTeleport = false;
         }
+        audioSource.clip = teleportEntry;
+        audioSource.Play();
         objToTeleport.position = exitPortal.transform.position;
     }
 

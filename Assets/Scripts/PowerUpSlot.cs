@@ -18,7 +18,5 @@ public class PowerUpSlot : MonoBehaviour {
         Debug.Log("Placing a Power Up in slot");
         powerUpChoice = Random.Range(0, powerUps.Length);
         GameObject powerup = Instantiate(powerUps[powerUpChoice], this.transform, false) as GameObject;
-
-
     }
 }

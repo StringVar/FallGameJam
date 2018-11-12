@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Background_Pathing : MonoBehaviour {
-    [SerializeField] private float backgroundSpeed = 2f;
-
+    public float backgroundSpeed = 200f;
     public Transform[] PathPts;
 
     private int endT;
